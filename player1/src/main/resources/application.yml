@@ -1,0 +1,6 @@
+server:
+  port: 8888
+
+game:
+  anotherPlayerUrl: http://localhost:8889/player2
+  passUri: /pass
