@@ -1,10 +1,17 @@
 player1/target/
-player2/target
-!.mvn/wrapper/maven-wrapper.jar
+player2/target/
+
+
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+player1/.idea
+player2/.idea
+player1/*.iws
+player2/*.iws
+player1/*.iml
+player2/*.iml
+player1/*.ipr
+player2/*.ipr
+player2/*.jar
+
 
