@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class Player1Application {
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(Player1Application.class, args);
 	}

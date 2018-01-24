@@ -8,6 +8,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
+
 @Service
 public class ASyncService {
 
@@ -16,18 +18,23 @@ public class ASyncService {
     @Autowired
     GameProperties gameProperties;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+
+
     @Async
     public void send(int  score) {
 
+        final RestTemplate restTemplate = new RestTemplate();
         Pass p = new Pass();
         p.setScore(score);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity httpRequest = new HttpEntity(p, headers);
 
-        // send the score over rest
-        ResponseEntity<String> response = restTemplate.exchange(gameProperties.getAnotherPlayerUrl()+ gameProperties.getPassUri(), HttpMethod.POST, httpRequest, String.class);
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(gameProperties.getAnotherPlayerUrl()+ gameProperties.getPassUri(), HttpMethod.POST, httpRequest, String.class);
+        } catch (Exception exp) {
+            System.out.println("other player is offline");
+        }
 
     }
 }

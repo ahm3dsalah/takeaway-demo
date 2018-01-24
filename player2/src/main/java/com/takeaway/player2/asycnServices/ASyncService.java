@@ -27,6 +27,10 @@ public class ASyncService {
         HttpEntity httpRequest = new HttpEntity(p, headers);
 
         // send the score over rest
-        ResponseEntity<String> response = restTemplate.exchange(gameProperties.getAnotherPlayerUrl()+ gameProperties.getPassUri(), HttpMethod.POST, httpRequest, String.class);
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(gameProperties.getAnotherPlayerUrl()+ gameProperties.getPassUri(), HttpMethod.POST, httpRequest, String.class);
+        } catch (Exception exp) {
+            System.out.println("other player is offline");
+        }
     }
 }
