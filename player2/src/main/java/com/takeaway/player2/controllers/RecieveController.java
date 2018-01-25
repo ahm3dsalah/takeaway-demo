@@ -23,18 +23,21 @@ public class RecieveController {
     @RequestMapping(path = "/pass", method = RequestMethod.POST)
     public void recieveScore(@RequestBody @Validated Pass passModel) {
 
-        System.out.println("Receiving from the other player " + passModel.getScore());
-        if (passModel.getScore() % 3 == 0 && passModel.getScore() / 3 == 1) {
-            System.out.println("player 2 wins");
-        } else if (passModel.getScore() % 3 == 0) {
-            System.out.println("passing to another player " + passModel.getScore() / 3);
-            aSyncService.send(passModel.getScore() / 3);
-        } else if (passModel.getScore() + 1 % 3 == 0) {
-            System.out.println("passing to another player " + (passModel.getScore() + 1));
-            aSyncService.send(passModel.getScore() + 1);
+        int val = 0;
+        System.out.println("Receiving from the other player "+ passModel.getScore());
+        if(passModel.getScore() % 3 == 0) {
+            val = passModel.getScore() / 3;
+        } else if((passModel.getScore()+1) % 3 == 0) {
+            val = (passModel.getScore() + 1) /3;
         } else {
-            System.out.println("passing to another player " + (passModel.getScore() - 1));
-            aSyncService.send(passModel.getScore() - 1);
+            val = (passModel.getScore() - 1) / 3;
+        }
+
+        if(val  == 1) {
+            System.out.println("player 2 wins");
+        } else {
+            System.out.println("sending to player 1");
+            aSyncService.send(val);
         }
     }
 

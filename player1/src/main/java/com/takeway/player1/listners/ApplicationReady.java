@@ -7,6 +7,8 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class ApplicationReady implements ApplicationListener<ApplicationReadyEvent> {
 
@@ -15,8 +17,10 @@ public class ApplicationReady implements ApplicationListener<ApplicationReadyEve
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        System.out.println("asdasdasd");
-        //aSyncService.send(56);
+
+        Random rn = new Random();
+        int result = rn.nextInt(10000 - 3 + 1) + 3;
+        aSyncService.send(result);
     }
 
 
