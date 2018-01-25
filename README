@@ -1,6 +1,11 @@
-- there are 2 players on this game. both spring boot app taking to each other over rest api
-- easy deployment since only one jar is generated from each player
-- player 1 will start the game once the server is running and it will display a message if the other player is offline
-- to run the players just user java - jar commands on each player and start the player 2 first since player 1 is the one starting the game
-- player one can be configured using configure enpoint by setting the initial score and it will send it to the second player
-- both players are single jar file so can be easly run on any environment
+
+ - there are 2 players on this game. both spring boot app taking to each other over rest api
+ - easy deployment since only one jar is generated from each player
+ - player 1 will start the game once the server is running and it will display a message if the other player is offline
+ - player one can be configured using configure endpoint by setting the initial score and it will send it to the second player
+ - both players are single jar file so can be easly run on any environment
+
+## how to start
+1. java - jar on player 2 generated jar
+2. java - jar on player 1 generated jar
+3. player one will start the game directly once server started
