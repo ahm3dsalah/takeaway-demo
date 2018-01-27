@@ -4,3 +4,4 @@ server:
 game:
   anotherPlayerUrl: http://localhost:8889/player2
   passUri: /pass
+  initialScore: 0
