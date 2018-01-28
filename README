@@ -10,4 +10,11 @@
 ## how to start
 1. java - jar on player 2 generated jar
 2. java - jar on player 1 generated jar
-3. player one will start the game directly once server started
+3. start player 2 first
+4. player one will start the game directly once server started
+
+I tried to add docker support so it can easly be deployed , but I needed bi-directional linking since the two containers needs
+to talk to each other . I can make more invistigation to it
+
+- you can find the docker files and every thing is ready to use docker
+- I used system outs to console only to make output more visible instead of logging
