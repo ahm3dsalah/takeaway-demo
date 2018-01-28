@@ -1,6 +1,7 @@
+spring:
+  profiles:
+    active: local
+
 server:
   port: 8889
 
-game:
-  anotherPlayerUrl: http://localhost:8888/player1
-  passUri: /pass

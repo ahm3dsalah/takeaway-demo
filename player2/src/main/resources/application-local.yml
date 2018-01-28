@@ -1,0 +1,4 @@
+
+game:
+  anotherPlayerUrl: http://localhost:8888/player1
+  passUri: /pass
