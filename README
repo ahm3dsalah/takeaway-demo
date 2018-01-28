@@ -2,7 +2,9 @@
  - there are 2 players on this game. both spring boot app taking to each other over rest api
  - easy deployment since only one jar is generated from each player
  - player 1 will start the game once the server is running and it will display a message if the other player is offline
- - player one can be configured using configure endpoint by setting the initial score and it will send it to the second player
+ - player one can be configured using configure endpoint by setting the initial score and it will send it to the second player, also it can be configured by
+   setting custom score by adding command line parmas --game.initialScore=<intial score> and it will start automaticly with this score 
+   
  - both players are single jar file so can be easly run on any environment
 
 ## how to start

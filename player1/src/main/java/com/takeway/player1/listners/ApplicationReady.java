@@ -22,9 +22,15 @@ public class ApplicationReady implements ApplicationListener<ApplicationReadyEve
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
-        Random rn = new Random();
-        int result = rn.nextInt(10000 - 3 + 1) + 3;
-        aSyncService.send(result);
+        // if user didnt provide value at startup system will generate random value
+        if(score != 0) {
+            aSyncService.send(score);
+        } else {
+            Random rn = new Random();
+            int result = rn.nextInt(10000 - 3 + 1) + 3;
+            aSyncService.send(result);
+        }
+
     }
 
 
