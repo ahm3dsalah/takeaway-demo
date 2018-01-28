@@ -13,8 +13,10 @@
 3. start player 2 first
 4. player one will start the game directly once server started
 
-I tried to add docker support so it can easly be deployed , but I needed bi-directional linking since the two containers needs
-to talk to each other . I can make more invistigation to it
+I also added docker support so they cun run easily on any machine with docker like servers here is the commands to start it
+ 1- open terminal and run the below commands
+ 2- docker run --name takeaway-player2 ahm3dsalah/player2
+ 3- docker run --name takeaway-player1 ahm3dsalah/player1
+ 
+ and you can see player 1 started the game
 
-- you can find the docker files and every thing is ready to use docker
-- I used system outs to console only to make output more visible instead of logging
