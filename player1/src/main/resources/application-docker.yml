@@ -1,5 +1,5 @@
 
 game:
-  anotherPlayerUrl: http://takeaway-player2:8889/player2
+  anotherPlayerUrl: http://172.17.0.2:8889/player2
   passUri: /pass
   initialScore: 0
